@@ -13,12 +13,12 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'ssh root@ub1 \'hostname\''
+                sh 'ssh -i "/var/lib/jenkins/.ssh/id_rsa" ec2-user@ec2-13-59-126-146.us-east-2.compute.amazonaws.com \'hostname\'' 
             }
         }
         stage("Second step") {
             steps {
-                sh 'ssh root@ub1 \'uptime\''
+                sh 'ssh -i "/var/lib/jenkins/.ssh/id_rsa" ec2-user@ec2-13-59-126-146.us-east-2.compute.amazonaws.com \'uptime\'' 
             }
         }
     }
